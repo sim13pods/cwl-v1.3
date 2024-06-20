@@ -1825,6 +1825,7 @@ $defs:
     - $ref: '#/$defs/CWLInputObjectBase'
     - $ref: '#/$defs/CWLDefaultTypedConditional'
     - $ref: '#/$defs/CWLDocumentation'
+    additionalProperties: false
   CWLInputMap:
     type: object
     title: CWLInputMap
