@@ -890,7 +890,6 @@ $defs:
     oneOf:
     - type: boolean
     - $ref: '#/$defs/CWLExpression'
-    title: EnableReuseValue
     description: |
       Indicates if reuse is enabled for this tool.
 
