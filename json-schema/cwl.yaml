@@ -1812,7 +1812,8 @@ $defs:
       type:
         $ref: '#/$defs/CWLType'
       inputBinding:
-        $ref: '#/$defs/InputBinding'
+        allOf:
+          - $ref: '#/$defs/InputBinding'
         additionalProperties: { }
     required:
       - type
