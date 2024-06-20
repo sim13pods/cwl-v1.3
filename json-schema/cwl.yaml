@@ -224,7 +224,7 @@ $defs:
       - '$include'
     additionalProperties: false
   InlineJavascriptLibItem:
-    title InlineJavascriptLibItem
+    title: InlineJavascriptLibItem
     oneOf:
       - type: string
       - $ref: '#/$defs/InlineJavascriptLibObject'
