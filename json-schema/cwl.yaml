@@ -858,7 +858,6 @@ $defs:
     - type: number
       minimum: 0.0
     - $ref: '#/$defs/CWLExpression'
-    title: TimeLimitValue
     description: |
       The time limit, in seconds.
 
