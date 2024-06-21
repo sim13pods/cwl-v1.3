@@ -252,8 +252,8 @@ $defs:
           - InlineJavascriptRequirement
       expressionLib:
         $ref: '#/$defs/InlineJavascriptLibraries'
-      required:
-        - expressionLib
+    required:
+      - expressionLib
     additionalProperties: false
   InplaceUpdateRequirement:
     type: object
