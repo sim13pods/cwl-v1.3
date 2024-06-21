@@ -1823,13 +1823,14 @@ $defs:
       - type
     additionalProperties: { }
   CWLInputObject:
+    type: object
     title: CWLInputObject
     summary: CWL type definition with parameters.
-    allOf:
-    - $ref: '#/$defs/CWLInputObjectBase'
-    - $ref: '#/$defs/CWLDefaultTypedConditional'
-    - $ref: '#/$defs/CWLDocumentation'
-    additionalProperties: false
+    additionalProperties:
+      allOf:
+      - $ref: '#/$defs/CWLInputObjectBase'
+      - $ref: '#/$defs/CWLDefaultTypedConditional'
+      - $ref: '#/$defs/CWLDocumentation'
   CWLInputMap:
     type: object
     title: CWLInputMap
