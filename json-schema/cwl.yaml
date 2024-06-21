@@ -824,8 +824,11 @@ $defs:
         type: string
         minLength: 1
       envValue:
-        type:
-          $ref: '#/$defs/CWLExpression'
+        type: object
+        additionalProperties:
+          allOf:
+            - description: The 'envValue' specified directly
+              $ref: '#/$defs/CWLExpression'
     required:
       - envName
       - envValue
