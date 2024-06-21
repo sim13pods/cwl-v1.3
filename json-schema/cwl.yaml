@@ -335,7 +335,8 @@ $defs:
       There is no way to distinguish between float/long simultaneously in JSON schema (multi-match oneOf).
       Therefore, only validate that it is greater than zero.
     type: number
-    exclusiveMinimum: 0
+    minimum: 0
+    exclusiveMinimum: true
     default: 1
   ResourceCoresMinimum:
     oneOf:
