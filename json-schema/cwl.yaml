@@ -1695,12 +1695,12 @@ $defs:
                 $ref: '#/$defs/AnyType'
   AnyType:
     title: AnyType
-    type:
-      - boolean
-      - number
-      - string
-      - array
-      - object
+    oneOf:
+      - type: boolean
+      - type: number
+      - type: string
+      - type: array
+      - type: object
   AnyLiteralType:
     title: AnyLiteralType
     oneOf:
