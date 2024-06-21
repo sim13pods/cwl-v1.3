@@ -824,11 +824,8 @@ $defs:
         type: string
         minLength: 1
       envValue:
-        type: object
-        additionalProperties:
-          allOf:
-            - description: The 'envValue' specified directly
-              $ref: '#/$defs/CWLExpression'
+        type:
+          $ref: '#/$defs/CWLExpression'
     required:
       - envName
       - envValue
@@ -1470,7 +1467,7 @@ $defs:
       This avoids over-accepting anything that does not match the intended type.
       However, validation limits itself to data literals and arrays.
       Nested type and multi-type definitions will validate against 'Any'.
-    allOf:
+    oneOf:
       - $comment: Object structure with minimally 'type' and 'default'. Otherwise, no point to continue testing.
         type: object
         properties:
@@ -1790,6 +1787,7 @@ $defs:
         oneOf:
           - $ref: '#/$defs/CWLType'
           - $ref: '#/$defs/CWLInputStdIn'
+        additionalProperties: false
       inputBinding:
         $ref: '#/$defs/InputBinding'
       id:
@@ -1805,7 +1803,7 @@ $defs:
       Input specification. Note that multiple formats are supported and
       not all specification variants or parameters are presented here. Please refer
       to official CWL documentation for more details (https://www.commonwl.org).
-    allOf:
+    oneOf:
     - $ref: '#/$defs/CWLInputItemBase'
     - $ref: '#/$defs/CWLDefaultTypedConditional'
     - $ref: '#/$defs/CWLDocumentation'
@@ -1826,11 +1824,11 @@ $defs:
     type: object
     title: CWLInputObject
     summary: CWL type definition with parameters.
-    additionalProperties:
-      allOf:
-      - $ref: '#/$defs/CWLInputObjectBase'
-      - $ref: '#/$defs/CWLDefaultTypedConditional'
-      - $ref: '#/$defs/CWLDocumentation'
+    oneOf:
+    - $ref: '#/$defs/CWLInputObjectBase'
+    - $ref: '#/$defs/CWLDefaultTypedConditional'
+    - $ref: '#/$defs/CWLDocumentation'
+    additionalProperties: false
   CWLInputMap:
     type: object
     title: CWLInputMap
@@ -2318,6 +2316,7 @@ $defs:
           - type: array
             items:
               type: string
+        additionalProperties: false
   CWLMetadata:
     title: CWLMetadata
     type: object
